@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <script>
+            function addexam() {
+                window.location="/exam/addexam/";
+            }
+            function logout() {
+                if(confirm("Are you sure to Log out..?"))
+                {
+                window.location='/student/logout/';
+                }
+            }
+            function home()
+            {
+                alert("You are already in Home section..!")
+            }
+            function viewexam()
+            {
+                window.location="/exam/viewexam/"
+            }
+        </script>
+        <style>
+            body{
+                background: gray;
+            }
+            table{
+                background: gray;
+            }
+            button{
+                width: 20%;
+                background: green;
+                border: 2px solid rgb(134, 216, 134);
+                height :30px;
+                color: wheat;
+                border-radius: 24px;
+            }
+            button:hover{
+                background: blue;
+            }
+            h1{
+                color: brown;
+            }
+            h2{
+                color: goldenrod;
+
+            }
+            h3{
+                color: green;
+            }
+            p{
+                color: blue;
+            }
+        </style>
+    </head>
+
+    <body>
+        <center>
+            <tr>
+                <td><button onclick="home()">Home</button></td>
+                <td><button onclick="addexam()">Post Exams</button></td>
+                <td><button onclick="viewexam()">View Exams</button></td>
+                <td><button onclick="logout()">Logout</button></td>
+            </tr>
+    
+        </center>
+
+        <table>
+            <tr>
+                <td style="width: 100px;"></td>
+                <td></td>
+                <td style="width: 100px;"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="background: black;">
+                    <center><h1>Welcome {{ name }}</h1></center>
+                    <h2>You are here to control exams</h2>
+                    <p>You can hereby add examinations to this site so that students
+                        may know all the examinations ahead.. And which subjects to select and
+                        work upon..
+                        Your work here is to add the examinations you are capable of 
+                        conducting in your college as students visiting this site may
+                        get a view across all examinations.. 
+                        They may select their interesting subjects and work upon and
+                        write these exams to get certified and to show their talents..
+                    </p>
+                    <h2>Post certification examinations and view students response.</h2>
+                    <p>
+                        Post certification examinations that might help your students get
+                        into a better future.View your students interests in various subjects 
+                        and this helps teachers like you to guide them to their best.. 
+                    </p>
+                    <h2>This below may give a guidance in how to use..</h2>
+                    <h3>Add Exam</h3>
+                    <p>
+                        The Add Exam button in the menu helps you to include new 
+                        examinations that you may wish to conduct for your students.
+                        Specify subject name , subject code and the syllabus to be studied 
+                        by students to get good marks in examinations
+                    </p>
+                    <h3>View Exam</h3>
+                    <p>
+                        The View Exam button in the menu helps you to see all the 
+                        examinations you have included and student participation in these 
+                        exams..
+                    </p>
+                    <h3>Remove Exam</h3>
+                    <p>
+                        The Remove Exam button in the menu helps you to remove exams which you
+                        think are outdated or you might not able to conduct..
+                    </p>
+                    <h2>
+                        Best of Luck for you and your Students...
+                    </h2>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </body>
+</html>

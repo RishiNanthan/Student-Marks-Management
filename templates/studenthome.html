@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width ,initial-scale=1">
+    <title>Sample</title>
+    <script>
+      function home() {
+        alert("You are already in home page")
+      }
+      function logout() {
+        if(confirm("Are you sure to Log out..?"))
+        {
+        window.location='/student/logout/'
+        }
+      }
+      function exams() {
+        window.location='/student/viewexam/'
+      }
+      function register() {
+        window.location='/student/viewexam/'
+      }
+    </script>
+    <style>
+      body{
+        background-color:gray;
+        align-content: center;
+        color:  white;
+      }
+
+      p{
+        color: darkcyan;
+      }
+
+      input{
+        background: yellow;
+        width:500px;
+        height: 30px;
+        border: 2px solid green;
+        text-align: center;
+      }
+
+      input:hover{
+        border: 2px solid red;
+      }
+
+      menu{
+        background:gray;
+        width: 100%;
+      }
+
+      .menu input{
+        background: white;
+        border: 2px solid brown;
+        height: 30px;
+        width: 200px;
+        border-radius: 20px;
+      }
+
+      .menu input:hover{
+        background: wheat;
+        border: 2px solid green;
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+    <center>
+      <table style="background: black; color: green;">
+        <tr style="height: 20px;"></tr>
+        <tr >
+          <td style="width: 100px;"></td>
+          <td>
+            <div class="menu">
+              <input type="button" value="Home" onclick="home()">
+              <input type="button" value="Exams" onclick="exams()">
+              <input type="button" value="Register" onclick="register()">
+              <input type="button" value="Logout" onclick="logout()">
+            </div>
+          </td>
+          <td style="width: 150px;"></td>
+        </tr>
+        <tr style="height: 20px;"></tr>
+        <tr style="height: 20px;"></tr>
+        {% if exams==None or exams==[] %}
+          <tr>
+            <td></td>
+            <td>
+            <h3> You haven't registered any Exam yet...</h3>
+            <p>Try attending extra certification exams for better
+              knowledge and to have better impacts on interviews...
+              Attending certification exams may help you overcome the
+              fear for exams and build confidence in you..
+            </p>
+            </td>
+            <td></td>
+          </tr>
+        {% endif %}
+        {% if exams!=None and exams!=[] %}
+        <tr>
+          <td></td>
+          <td>
+          <center><h1 style="color: red;">Your Examination(s)</h1></center>
+          </td>
+          <td></td>
+        </tr>
+          {% for exam in exams %}
+            <tr>
+              <td></td>
+              <td>
+                <h1>Exam Name : {{ exam.subjectname }}</h1>
+                <h3>Subject Code : {{ exam.subjectcode }}</h3>
+                <h3>Domain : {{ exam.domain }}</h3>
+                <h3>Exam Date : {{ exam.examdate }}</h3>
+              </td>
+              <td></td>
+            </tr>
+          {% endfor %}
+        {% endif %}
+        <tr style="height: 100px;"></tr>
+      </table>
+    </center>
+  </body>
+</html>

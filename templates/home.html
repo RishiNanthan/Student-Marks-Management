@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exam Registration</title>
+        <style>
+            body{
+                border:0;
+                background:#34495e;
+            }
+            h1{
+                padding-top: 50px;
+            }
+            
+            
+            .box1{
+                width:auto;
+                height:125px;
+                background: black;
+                color:darkgray;
+                display: block;
+                padding-top: 14px;
+                padding-bottom: 14px;
+                transition: 0.25s;
+            
+            }
+            .box2{
+                padding-top: 50px;
+                background: #191919;
+                display: block;
+            }
+            .box2 input[type="submit"]{
+                display:block;
+                text-align: center;
+                background: black;
+                width: 200px;
+                height: 50px;
+                border: 2px solid green;
+                color:aquamarine;
+                margin: 20px auto;
+                border-radius: 24px;
+                transition:0.25s;
+            }
+            .box2 input[type="submit"]:hover{
+                background: green;
+                width:220px;
+            }
+        </style>
+    </head>
+    <body>
+    
+        
+        <center><h1 style="color:cornflowerblue">Exam Registration</h1></center>
+        <br>
+        <div class="box1">
+        </div>
+        <div class="box2">
+        <form action="/student/login/">
+        <center><input type="submit" value="Student Login"></center>
+        <br><br>
+        </form>
+        <form action="/student/signup/">
+        <center><input type="submit" value="Student Signup"></center>
+        <br><br>
+        </form>
+        <form action="/exam/login/">
+        <center><input type="submit" value="Exam Controller"></center>
+        <br><br>
+        </form>
+        </div>
+        <div class="box1"></div>     
+        </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Login
+        </title>
+        <style>
+            body {
+                background-color: #191919;
+            }
+            
+        .box{
+            padding-top: 50px;
+            width: 300px;
+            padding: 40px;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            background:#191919;
+            text-align: center;
+        }
+        .box input[type="text"],.box input[type="password"]{
+            border:0;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #3498db;
+            padding: 14px 10px;
+            width: 200px;
+            color:antiquewhite;
+            border-radius: 24px;
+            transition:0.25s;
+        }
+        .box input[type="text"]:focus,.box input[type="password"]:focus{
+            width: 280px;
+            border-color:#2ecc71;
+        }
+        .box input[type="submit"]{
+            border: 0;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #2ecc71;
+            padding: 14px 40px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition:0.25s;
+            cursor: pointer;
+        }
+        .box input[type="submit"]:hover{
+            background: #2ecc71;
+        }
+        </style>
+        <script>
+            function validate()
+            {
+                alert("hello")
+                let roll=document.getElementById('rollno')
+                let pw=document.getElementById('pw')
+                if(roll.innerText=="" || pw.innerText=="")
+                {
+                    alert("fill all details in the form")
+                    return false
+                }
+                return true
+            }
+        </script>
+    </head>
+    <body>
+        <center><h1 style="color:blue">Log In</h1></center>
+        
+        <form class=box action="/exam/login/" method="POST">
+            <center><input id="rollno" type="text" name="username" size="30" placeholder="Exam Controller Name"></center>
+            <center><input id="pw" type="Password" name="password" size="30" placeholder="Password"></center><br>
+            <center><input type="submit" value="Login" onsubmit="validate()"></center>
+        </form>
+    </body>
+</html>

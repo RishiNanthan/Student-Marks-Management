@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Post Examinations</title>
+        <script>
+            function home()
+            {
+                window.location="/exam/login/";
+            }
+            function logout() {
+                if(confirm("Are you sure to Log out..?"))
+                {
+                window.location='/student/logout/';
+                }
+            }
+            function addexam()
+            {
+                alert("You are already in the Post Exam Section..!")
+            }
+            function viewexam()
+            {
+                window.location="/exam/viewexam/";
+            }
+        </script>
+        <style>
+            button{
+                background: none;
+                color: green;
+                border: 2px solid blue;
+                width: 20%;
+                height: 30px;
+            }
+            button:hover{
+                background: greenyellow;
+            }
+            body{
+                background: black;
+                color :indigo;
+            }
+            input{
+                background: none;
+                border: 2px solid green;
+                text-align: center;
+                color: blue;
+                border-radius: 20px;
+                width: 200px;
+                height: 50px;
+            }
+            input:hover{
+                background: gray;
+            }
+        </style>
+    </head>
+
+    <body>
+        <center><div>
+            <button onclick="home()">Home</button>
+            <button onclick="addexam()">Post Exam</button>
+            <button onclick="viewexam()">View Exam</button>
+            <button onclick="logout()">Logout</button>
+        </div></center>
+        <center>
+        <table>
+            <tr>
+                <td style="width:200px;"></td>
+                <td></td>
+                <td style="width:200px;"></td>
+            </tr>
+            <form action="/exam/addexam/" method="POST">
+                <tr>
+                    <td></td>
+                    <td>
+                    </br><center><input type="text" name="subjectname" placeholder="Subject Name" id="subjectname"></center></br>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <center><input type="text" name="subjectcode" placeholder="Subject Code" id="subjectcode"></center></br>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <center><input type="text" name="domain" placeholder="Domain" id="domain"></center></br>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <center><input type="date" name="examdate" placeholder="Exam Date" id="examdate"></center></br>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <center><input type="number" name="examfee" placeholder="Exam Fee" id="examfee"></center></br>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <center><input type="submit" value="Submit"></center></br>
+                    </td>
+                    <td></td>
+                </tr>
+
+            </form>
+        </table>
+        </center>
+    </body>
+</html>

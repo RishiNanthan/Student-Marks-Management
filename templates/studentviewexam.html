@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width ,initial-scale=1">
+    <title>Sample</title>
+    <script>
+      function home() {
+        window.location='/student/login/'
+      }
+      function logout() {
+        if(confirm("Are you sure to Log out..?"))
+        {
+        window.location='/student/logout/';
+        }
+      }
+      function exams() {
+        window.location='/student/viewexam/'
+      }
+      function register() {
+        window.location='/student/viewexam/'
+      }
+      function submit()
+      {
+        return confirm("To get the certificate from Exam Board ,you have to pay the exam fee.Are you sure to continue..? ");
+      }
+    </script>
+    <style>
+      body{
+        background-color:gray;
+        align-content: center;
+      }
+
+      p{
+        color: darkcyan;
+      }
+
+      input{
+        background: yellow;
+        width:500px;
+        height: 30px;
+        border: 2px solid green;
+        text-align: center;
+      }
+
+      input:hover{
+        border: 2px solid red;
+      }
+
+      menu{
+        background:gray;
+        width: 100%;
+      }
+
+      .menu input{
+        background: white;
+        border: 2px solid brown;
+        height: 30px;
+        width: 200px;
+        border-radius: 20px;
+      }
+
+      .menu input:hover{
+        background: wheat;
+        border: 2px solid green;
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+    <center>
+      <table style="background: black; color: green;">
+        <tr style="height: 20px;"></tr>
+        <tr >
+          <td style="width: 100px;"></td>
+          <td>
+            <div class="menu">
+              <input type="button" value="Home" onclick="home()">
+              <input type="button" value="Exams" onclick="exams()">
+              <input type="button" value="Register" onclick="register()">
+              <input type="button" value="Logout" onclick="logout()">
+            </div>
+          </td>
+          <td style="width: 150px;"></td>
+        </tr>
+        <tr style="height: 20px;"></tr>
+        <tr style="height: 20px;"></tr>
+        <tr>
+          <td></td>
+          <td>
+            <h1>Exam : {{ exam.subjectname }}</h1>
+            <h3>Domain : {{ exam.domain }}</h3>
+            <h3>Subject Code: {{ exam.subjectcode }}</h3>
+            <h3>Exam Date : {{ exam.examdate }}</h3>
+            <h3>Exam Fee : {{ exam.examfee }}</h3>
+            <form action="/student/register/" method="POST">
+              <input type="text" name="subjectcode" value="{{ exam.subjectcode }}" style="display: none;">
+              <input type="submit" value="Register" onsubmit="return submit()">
+            </form>
+          </td>
+          <td></td>
+        </tr>
+        <tr style="height: 100px;"></tr>
+      </table>
+    </center>
+  </body>
+</html>

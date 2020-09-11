@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Examinations</title>
+        <script>
+            function addexam() {
+                window.location="/exam/addexam/";
+            }
+            function logout() {
+                if(confirm("Are you sure to Log out..?"))
+                {
+                window.location='/student/logout/';
+                }
+            }
+            function viewexam()
+            {
+                alert("You are in the Exams section..!")
+            }
+            function home()
+            {
+                window.location="/exam/login/"
+            }
+        </script>
+        <style>
+            body{
+                background: gray;
+            }
+            table{
+                background: gray;
+            }
+            button{
+                width: 20%;
+                background: green;
+                border: 2px solid rgb(134, 216, 134);
+                height :30px;
+                color: wheat;
+                border-radius: 24px;
+            }
+            button:hover{
+                background: blue;
+            }
+            h1{
+                color: brown;
+            }
+            h2{
+                color: goldenrod;
+
+            }
+            h3{
+                color: green;
+            }
+            p{
+                color: blue;
+            }
+        </style>
+    </head>
+
+    <body>
+        <center>
+            <tr>
+                <td><button onclick="home()">Home</button></td>
+                <td><button onclick="addexam()">Post Exams</button></td>
+                <td><button onclick="viewexam()">View Exams</button></td>
+                <td><button onclick="logout()">Logout</button></td>
+            </tr>
+    
+        </center>
+
+        <table>
+            <tr>
+                <td style="width: 100px;"></td>
+                <td style="height: 50px;"></td>
+                <td style="width: 100px;"></td>
+            </tr>
+            {% if exams==None or exams==[] %}
+              <tr>
+                <td></td>
+                <td>
+                <h3> No Exams posted yet...</h3>
+                <p> Post some exams so that they will be useful to your
+                    students for their career and certifications and to get 
+                    an idea about their own knowledge and talent..
+                </p>
+                </td>
+                <td></td>
+              </tr>
+            {% endif %}
+            {% if exams!=None and exams!=[] %}
+              {% for exam in exams %}
+                <tr>
+                  <td></td>
+                  <td>
+                    <form action="/exam/viewexam/" method="POST">
+                      <input type="text" name="subjectcode" value="{{ exam[1] }}" style="display: none;">
+                      <h1><input type="submit" value="{{ exam[0] }}"></h1>
+                      <h3>Domain:{{ exam[2] }}</h3>
+                    </form>
+                  </td>
+                  <td></td>
+                </tr>
+              {% endfor %}
+            {% endif %}
+        <tr style="height: 300px;"></tr>
+        </table>
+    </body>
+</html>

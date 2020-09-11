@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Student Signup
+        </title>
+        <style>
+            body {
+                background-color: #191919;
+            }
+            
+        .box{
+            padding-top: 50px;
+            width: 300px;
+            padding: 40px;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            background:#191919;
+            text-align: center;
+        }
+        .box input[type="text"],.box input[type="password"]{
+            border:0;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #3498db;
+            padding: 14px 10px;
+            width: 250px;
+            color:antiquewhite;
+            
+        }
+        .box input[type="text"]:focus,.box input[type="password"]:focus{
+            width: 300px;
+            border-color:#2ecc71;
+        }
+        .box input[type="submit"]{
+            border: 0;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #2ecc71;
+            padding: 14px 40px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+        }
+        .box input[type="submit"]:hover{
+            background: #2ecc71;
+        }
+        </style>
+        <script>
+            function validate()
+            {
+                alert("hello")
+                let roll=document.getElementById('rollno')
+                let pw=document.getElementById('pw')
+                if(roll.innerText=="" || pw.innerText=="")
+                {
+                    alert("fill all details in the form")
+                    return false
+                }
+                return true
+            }
+        </script>
+    </head>
+    <body>
+        <div style="background: #2ecc71">
+        <center><h1 style="color:blue">Sign Up</h1></center>
+        
+        <form class=box action="/student/signup" method="POST">
+            <center><input id="rollno" type="text" name="rollno" size="30" placeholder="Roll Number"></center>
+            <center><input id="name" type="text" name="name" size="30" placeholder="User Name"></center>
+            <center><input id="pw" type="password" name="password" size="30" placeholder="Password"></center>
+            <center><input id="cpwd" type="password" size="30" placeholder="Confirm Password"></center><br>
+            <center><input type="submit" value="Signup" onsubmit="validate()"></center>
+        </form>
+        </div>
+    </body>
+</html>
